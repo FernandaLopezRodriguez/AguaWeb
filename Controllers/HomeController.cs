@@ -18,19 +18,19 @@ namespace Agua.Controllers
         
         public IActionResult Calcular(DateTime ProximoCumple, int minutos)
         {
-            /// Aquí tienen que hacer todo
-            /// La fecha que y los minutos vienen del formulario 
-            /// Investigar Model Binding 
-
+           
             int botellasXDia = minutos * 12;
             DateTime hoy = DateTime.Today;
             TimeSpan lapsoHoyProximoCumple = ProximoCumple - hoy;
             int dias = lapsoHoyProximoCumple.Days;
             int totaBotellas = dias * botellasXDia;
-
+            int meses = lapsoHoyProximoCumple.Days/30;
+            int MesBotella = meses * botellasXDia;
 
             ViewBag.Dias = dias;
             ViewBag.Botellas = totaBotellas;
+            ViewBag.Meses = meses;
+            ViewBag.BotellasMes = MesBotella;
 
             return View();
         }
