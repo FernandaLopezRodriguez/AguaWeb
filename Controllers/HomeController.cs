@@ -25,7 +25,7 @@ namespace Agua.Controllers
             int dias = lapsoHoyProximoCumple.Days;
             int totaBotellas = dias * botellasXDia;
             int meses = lapsoHoyProximoCumple.Days/30;
-            int MesBotella = meses * botellasXDia;
+            int MesBotella = 30 * botellasXDia;
 
             ViewBag.Dias = dias;
             ViewBag.Botellas = totaBotellas;
